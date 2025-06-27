@@ -1,0 +1,226 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Raleway:200,400|PT+Mono&display=swap");
+html{
+  text-transform:uppercase;
+}
+body {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+}
+.dashboard-container{
+  position: relative;
+  margin: 5% auto;
+  width: 750px;
+  height: 550px;
+  border: 1px solid #D8DBE2;
+}
+
+.leftside-menu{
+    position: absolute;
+  height: 100%;
+  width: 20%;
+  background: #D8DBE2;
+  box-shadow: 2px 2px 15px rgba(73, 88, 103, 0.3);
+  text-align: center;
+}
+
+li {
+  list-style-type: none;
+  color: #495867;
+  margin: 0;
+  padding: 15px;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+li:hover {
+  background: #FFFFFF;
+  color: #577399;
+  transition: all 0.3s ease;
+}
+
+.menu.active{
+  background-color: #B7CEE8;
+  color: white;
+  font-size: 15px;
+}
+
+.data-content{
+  margin-top: 3.5%;
+  width: 70%;
+  margin-left: 25%;
+  background: #FFFFFF;
+  height: 90%;
+  overflow-x: auto;
+}
+
+.main-grid{
+    display:none;
+}
+
+.main-grid.show{
+    display: block;
+}
+
+.data {
+  display: none !important;
+}
+
+.data.show {
+  display: block !important;
+}
+
+/* 美化form輸入格，label對齊，input統一寬度，間距 */
+#form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 420px;
+  margin: 0 auto;
+  
+}
+#form label {
+  display: inline-block;
+  width: 70px;
+  margin-bottom: 6px;
+  text-align: right;
+  font-size: 0.5em;
+  color: #495867;
+}
+#form input[type="text"],
+#form input[type="date"] {
+  width: 80px;
+  padding: 5px 8px;
+  margin-bottom: 10px;
+  margin-left: 8px;
+  border: 1px solid #B7CEE8;
+  border-radius: 4px;
+  font-size: 0.8em;
+  background: #F7FAFC;
+  box-sizing: border-box;
+}
+#form input[readonly] {
+  background: #e9ecef;
+  color: #888;
+  font-size: 0.8em;
+}
+#form hr {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #B7CEE8;
+  margin: 10px 0;
+}
+#form button {
+  margin-right: 10px;
+  padding: 6px 18px;
+  border: none;
+  border-radius: 4px;
+  background: #B7CEE8;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-transform:uppercase;
+}
+#form button:hover {
+  background: #577399;
+}
+#form .error-message {
+  color: #d9534f;
+  font-size: 0.95em;
+  margin-bottom: 8px;
+}
+#form .success-message {
+  color: #28a745;
+  font-size: 0.95em;
+  margin-left: 10px;
+}
+#form label[for^="code"] {
+  margin-top: 2px;
+}
+#form input[type="text"]:not([readonly]),
+#form input[type="date"] {
+  background: #fff;
+}
+#form input[type="text"]:focus,
+#form input[type="date"]:focus {
+  outline: 2px solid #B7CEE8;
+}
+#form input[type="text"]::-webkit-input-placeholder {
+  color: #bbb;
+}
+#form input[type="text"]::-moz-placeholder {
+  color: #bbb;
+}
+#form input[type="text"]:-ms-input-placeholder {
+  color: #bbb;
+}
+#form input[type="text"]::placeholder {
+  color: #bbb;
+}
+
+/* 修正form-grid寬度，讓表單不會超出container，並讓input寬度自動縮放 */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 24px;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+}
+.form-row label {
+  width: 90px;
+  margin-right: 8px;
+  text-align: right;
+  font-size: 0.92em;
+  color: #495867;
+  flex-shrink: 0;
+}
+.form-row input[type="text"],
+.form-row input[type="date"] {
+  flex: 1 1 0%;
+  min-width: 0;
+  width: 70px;
+  max-width: 100%;
+  padding: 4px 6px;
+  border: 1px solid #B7CEE8;
+  border-radius: 4px;
+  font-size: 0.92em;
+  background: #F7FAFC;
+  box-sizing: border-box;
+}
+@media (max-width: 700px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+    max-width: 98vw;
+  }
+}
+
+/* 縮小表單字體與輸入格字體 */
+.form-grid {
+  font-size: 0.95em;
+}
+.form-row label {
+  font-size: 0.92em;
+}
+.form-row input[type="text"],
+.form-row input[type="date"] {
+  font-size: 0.9em;
+  height: 26px;
+}
+#form button {
+  font-size: 0.95em;
+  padding: 5px 14px;
+  font-family: "Raleway", sans-serif;
+}
+#form strong {
+  font-size: 1.05em;
+}
